@@ -8,59 +8,57 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="promotion")
-public class Promotion {
-
-	@Id
-	//@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="promotionid")
-	private long promotionid;
+@Table(name="promotions")
+public class Promotion{
 	
-	@Column(name="promocode", nullable = false)
-	private String promocode;
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="pid")
+	private long pid;
+	
+	@Column(name="code", nullable = false)
+	private String code;
 	
 	@Column(name="discount")
-	private float discount;
-	
+	private String discount;
+
 	public Promotion() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Promotion(long promotionid, String promocode, float discount) {
+	public Promotion(long pid, String code, String discount) {
 		super();
-		this.promotionid = promotionid;
-		this.promocode = promocode;
+		this.pid = pid;
+		this.code = code;
 		this.discount = discount;
 	}
 
-	
-	public long getPromotionId() {
-		return promotionid;
+	public long getPid() {
+		return pid;
 	}
 
-	public void setPromotionId(long promotionid) {
-		this.promotionid = promotionid;
+	public void setPid(long pid) {
+		this.pid = pid;
 	}
 
-	
-	public String getPromoCode() {
-		return promocode;
+	public String getCode() {
+		return code;
 	}
 
-	public void setPromoCode(String promocode) {
-		this.promocode = promocode;
+	public void setCode(String code) {
+		this.code = code;
 	}
 
-	public float getDiscount() {
+	public String getDiscount() {
 		return discount;
 	}
 
-	public void setDiscount(float discount) {
+	public void setDiscount(String discount) {
 		this.discount = discount;
 	}
 	
 	
-	
-	
+
 }

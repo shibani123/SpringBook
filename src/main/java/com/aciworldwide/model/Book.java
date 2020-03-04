@@ -11,33 +11,35 @@ import javax.persistence.Table;
 @Table(name = "book")
 public class Book {
 
-	private int bookid;
+	private long bookid;
 	private String booktitle;
 	private String bookauthor;
 	private String bookprice;
-	private String bookquantity;
+	private int bookquantity;
+	
 	
 	public Book() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Book(int bookid, String booktitle, String bookauthor, String bookprice, String bookquantity) {
+	public Book(long bookid, String booktitle, String bookauthor, String bookprice, int bookquantity) {
 		super();
 		this.bookid = bookid;
 		this.booktitle = booktitle;
 		this.bookauthor = bookauthor;
 		this.bookprice = bookprice;
 		this.bookquantity = bookquantity;
+		
 	}
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	public int getBookid() {
+	public long getBookid() {
 		return bookid;
 	}
 
-	public void setBookid(int bookid) {
+	public void setBookid(long bookid) {
 		this.bookid = bookid;
 	}
 
@@ -66,13 +68,20 @@ public class Book {
 		this.bookprice = bookprice;
 	}
 
-	public String getBookquantity() {
+	public int getBookquantity() {
 		return bookquantity;
 	}
 
-	public void setBookquantity(String bookquantity) {
+	@Override
+	public String toString() {
+		return "Book [bookid=" + bookid + ", booktitle=" + booktitle + ", bookauthor=" + bookauthor + ", bookprice="
+				+ bookprice + ", bookquantity=" + bookquantity + "]";
+	}
+
+	public void setBookquantity(int bookquantity) {
 		this.bookquantity = bookquantity;
 	}
+	
 	
 	
 	

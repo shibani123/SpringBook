@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.aciworldwide.model.Book;
 import com.aciworldwide.model.Customer;
 import com.aciworldwide.repositories.CustomerRepository;
 
@@ -24,6 +25,10 @@ public class CustomerService {
 	
 	public void deleteCustomers(long id) {
 		customerRepository.deleteById(id);
+	}
+	
+	public Customer updateCustomers(Customer customer) {
+		return customerRepository.saveAndFlush(customer);
 	}
 	
 	public Customer getByCustomerUsername(String username) {

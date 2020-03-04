@@ -19,6 +19,9 @@ public class PromotionService {
 		return promotionRepository.findAll();
 	}
 	
+	public Promotion findpromo(String code) {
+		return promotionRepository.findByPromoCode(code);
+	}
 	public Promotion savePromotion(Promotion p) {
 		return promotionRepository.saveAndFlush(p);
 	}

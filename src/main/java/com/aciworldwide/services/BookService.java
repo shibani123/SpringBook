@@ -34,5 +34,9 @@ public class BookService {
 	public Book saveBooks(Book book) {
 		return bookRepository.saveAndFlush(book);
 	}
+	
+	public void updateByQuantity(long bookid, int bookquantity) {
+		 bookRepository.decrementQuantity(bookid, bookquantity);
+	}
 
 }

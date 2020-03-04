@@ -17,13 +17,14 @@ public class Customer {
 	private String password;
 	private String email;
 	private String phone;
+	private String actor;
 	
 	public Customer() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 	
-	public Customer(long id, String name, String username, String password, String email, String phone) {
+	public Customer(long id, String name, String username, String password, String email, String phone, String actor) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -31,6 +32,7 @@ public class Customer {
 		this.password = password;
 		this.email = email;
 		this.phone = phone;
+		this.actor = actor;
 	}
 
 	@Id
@@ -82,6 +84,14 @@ public class Customer {
 
 	public void setPhone(String phone) {
 		this.phone = phone;
+	}
+	
+	public String getActor() {
+		return actor;
+	}
+
+	public void setActor(String actor) {
+		this.actor = actor;
 	}
 	
 	
