@@ -19,7 +19,7 @@ import com.aciworldwide.services.PromotionService;
 
 @RestController
 @RequestMapping("/api/promotions")
-@CrossOrigin(origins="http://192.168.1.34:4200")
+@CrossOrigin(origins="http://localhost:4200")
 public class PromotionController {
 
 	@Autowired

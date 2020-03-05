@@ -1,5 +1,7 @@
 package com.aciworldwide.repositories;
 
+import java.util.List;
+
 import javax.transaction.Transactional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -17,4 +19,7 @@ public interface BookRepository extends JpaRepository<Book, Long> {
 	@Transactional
 	@Query("update Book b set b.bookquantity =?2 where b.bookid =?1")
 	void decrementQuantity(long bookid, int bookquantity);
+	
+	@Query("select b from Book b order by b.booktitle")
+	List<Book> findBookByOrder();
 }

@@ -16,7 +16,8 @@ public class BookService {
 	private BookRepository bookRepository;
 	
 	public List<Book> getBooks(){
-		return bookRepository.findAll();
+//		return bookRepository.findAll();
+		return bookRepository.findBookByOrder();
 	}
 	
 	public Book insertBook(Book book) {

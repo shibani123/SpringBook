@@ -19,7 +19,7 @@ import com.aciworldwide.services.BookService;
 
 @RestController
 @RequestMapping("/api/books")
-@CrossOrigin(origins="http://192.168.1.34:4200")
+@CrossOrigin(origins="http://localhost:4200")
 public class BookController {
 
 	@Autowired
