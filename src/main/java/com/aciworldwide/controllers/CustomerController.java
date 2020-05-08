@@ -25,7 +25,7 @@ public class CustomerController {
 	@Autowired
 	private CustomerService customerService;
 	
-	@GetMapping("/a")
+	@GetMapping("/all")
 	public List<Customer> getCustomers(){
 		return customerService.getCustomers();
 	}
